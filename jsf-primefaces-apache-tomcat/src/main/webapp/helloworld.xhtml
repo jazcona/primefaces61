@@ -25,12 +25,37 @@
     </p:panel>
 
     <p:dialog header="Greeting" widgetVar="greetingDialog"
-      modal="true" resizable="false">
+      modal="true" resizable="true" closeable="true" width="1500" height="auto" responsive="true" position="200,100" style="overflow-y: scroll; max-height: 85%;" >
       <h:panelGrid id="greeting" columns="1" cellpadding="4">
         <h:outputText value="#{helloWorld.showGreeting()}" />
       </h:panelGrid>
+      <p:panel header="tabla 1" toggleable="true" collapsed="true" rendered="true">
+        <p:dataTable var="car" value="#{helloWorld.cars}" rows="5" paginator="true" multiViewState="true" emptyMessage="No hay registros" paginatorPosition="top" paginationTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+          <p:column headerText="Id"><h:outputText value="#{car.id}" /></p:column>
+          <p:column headerText="Year"><h:outputText value="#{car.year}" /></p:column>
+          <p:column headerText="Brand"><h:outputText value="#{car.brand}" /></p:column>
+          <p:column headerText="Color"><h:outputText value="#{car.color}" /></p:column>
+        </p:dataTable>
+      </p:panel>
+      <p:spacer rendered="true"/>
+      <p:panel header="tabla 2" toggleable="true" collapsed="true" rendered="true">
+        <p:dataTable var="car" value="#{helloWorld.cars}" rows="5" paginator="true" multiViewState="true" emptyMessage="No hay registros" paginatorPosition="top" paginationTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+          <p:column headerText="Id"><h:outputText value="#{car.id}" /></p:column>
+          <p:column headerText="Year"><h:outputText value="#{car.year}" /></p:column>
+          <p:column headerText="Brand"><h:outputText value="#{car.brand}" /></p:column>
+          <p:column headerText="Color"><h:outputText value="#{car.color}" /></p:column>
+        </p:dataTable>
+      </p:panel>
+      <p:spacer rendered="true"/>
+      <p:panel header="tabla 3" toggleable="true" collapsed="true" rendered="true">
+        <p:dataTable var="car" value="#{helloWorld.cars}" rows="5" paginator="true" multiViewState="true" emptyMessage="No hay registros" paginatorPosition="top" paginationTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+          <p:column headerText="Id"><h:outputText value="#{car.id}" /></p:column>
+          <p:column headerText="Year"><h:outputText value="#{car.year}" /></p:column>
+          <p:column headerText="Brand"><h:outputText value="#{car.brand}" /></p:column>
+          <p:column headerText="Color"><h:outputText value="#{car.color}" /></p:column>
+        </p:dataTable>
+      </p:panel>
     </p:dialog>
-
   </h:form>
 </h:body>
 </html>
